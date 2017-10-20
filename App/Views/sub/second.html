@@ -36,6 +36,11 @@
 			
 			var cdntokenDIV = document.getElementById('cdntoken');
 			console.log('cdntokenDIV = '+cdntokenDIV);
+			
+			var elem = document.createElement("img");
+			elem.setAttribute("src",bearURL);
+			cdntokenDIV.appendChild(elem);
+			
 		});
 	
 		/*$.ajax({
