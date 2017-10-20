@@ -22,8 +22,8 @@
 		var cdnURL = 'https://tst-demo2-apimgts.azure-api.net/accesscdn/CDNToken?id_token='+userToken;
 		
 		var cdnToken = '';
-		//var cdnToken = getCDNToken(cdnURL);
-		$.ajax({
+		var cdnToken = getCDNToken(cdnURL);
+		/*$.ajax({
             url: cdnURL,
             beforeSend: function(xhrObj){
                 //Request headers
@@ -38,7 +38,7 @@
 				console.log('jqXHR = '+jqXHR);
 				console.log('-------------------------------');
 			
-				cdnToken = data;
+				callback(data);
 			},
 			error: function(xhr, textStatus, errorThrown, response, status, error) { 
 			
@@ -55,12 +55,12 @@
 				//var testIframe = document.getElementById("cdnIframe");
 				//testIframe.src = cdnURL;
 			},
-       });
+       });*/
 	   
 	   console.log('*************************************');
 	   console.log('cdnToken = '+cdnToken);
 	   
-	   /*function getCDNToken (cdnURL){
+	   function getCDNToken (cdnURL){
 			$.ajax({
             url: cdnURL,
             beforeSend: function(xhrObj){
@@ -76,7 +76,7 @@
 				console.log('jqXHR = '+jqXHR);
 				console.log('-------------------------------');
 				
-				return data;
+				callback(data);
 			},
 			error: function(xhr, textStatus, errorThrown, response, status, error) { 
 			
@@ -94,6 +94,6 @@
 				//testIframe.src = cdnURL;
 			},
 			});
-		}*/
+		}
 	</script>
 </div>
