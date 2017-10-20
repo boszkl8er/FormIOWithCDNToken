@@ -1,4 +1,15 @@
 <div id="cdntoken">
 
 <img src="https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg"/>
+
+	<script type='text/javascript'>
+		console.log('Call second.html');
+		console.log('----------------------------------------------------');
+		//get user token
+		var userToken = angular.element(document.getElementById('cdntoken')).scope().getToken2();
+		console.log('User token = '+userToken);
+		
+		var userToken2 = angular.element(document.getElementById('AppID')).scope().getToken2();
+		console.log('User token2 = '+userToken2);
+	</script>
 </div>
