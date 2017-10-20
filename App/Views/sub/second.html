@@ -23,7 +23,7 @@
 		
 		var cdnToken = '';
 		//var cdnToken = getCDNToken(cdnURL);
-		cdnToken = $.ajax({
+		$.ajax({
             url: cdnURL,
             beforeSend: function(xhrObj){
                 //Request headers
@@ -37,9 +37,8 @@
 				console.log('textStatus = '+textStatus);
 				console.log('jqXHR = '+jqXHR);
 				console.log('-------------------------------');
-				
-				return data;
-				
+			
+				cdnToken = data;
 			},
 			error: function(xhr, textStatus, errorThrown, response, status, error) { 
 			
