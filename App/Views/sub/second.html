@@ -23,6 +23,7 @@
 		
 		var cdnToken = '';
 		var cdnToken = getCDNToken(cdnURL);
+	
 		/*$.ajax({
             url: cdnURL,
             beforeSend: function(xhrObj){
@@ -61,7 +62,7 @@
 	   console.log('cdnToken = '+cdnToken);
 	   
 	   function getCDNToken (cdnURL){
-			$.ajax({
+			return $.ajax({
             url: cdnURL,
             beforeSend: function(xhrObj){
                 //Request headers
@@ -74,9 +75,7 @@
 				console.log('data redirect = '+data.redirect);
 				console.log('textStatus = '+textStatus);
 				console.log('jqXHR = '+jqXHR);
-				console.log('-------------------------------');
-				
-				callback(data);
+				console.log('-------------------------------');s
 			},
 			error: function(xhr, textStatus, errorThrown, response, status, error) { 
 			
@@ -95,5 +94,14 @@
 			},
 			});
 		}
+		
+		function foo(callback) {
+    $.ajax({
+        // ...
+        success: callback
+    });
+	
+	
+}
 	</script>
 </div>
