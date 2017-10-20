@@ -20,5 +20,37 @@
 		console.log('User token = '+userToken);
 		
 		var cdnURL = 'https://tst-demo2-apimgts.azure-api.net/accesscdn/CDNToken?id_token='+userToken;
+		
+		
+		$.ajax({
+            url: cdnURL,
+            beforeSend: function(xhrObj){
+                //Request headers
+            },
+            type: "GET",
+			success: function (data, textStatus, jqXHR){
+				console.log('function success');
+				console.log('-------------------------------');
+				console.log('data = '+data);
+				console.log('data redirect = '+data.redirect);
+				console.log('textStatus = '+textStatus);
+				console.log('jqXHR = '+jqXHR);
+			},
+			error: function(xhr, textStatus, errorThrown, response, status, error) { 
+			
+				console.log('xhr = '+xhr);
+				console.log('xhr text'+xhr.responseText);
+				console.log('Error!  Status = ' + xhr.status);
+				console.log('textStatus = '+textStatus);
+				console.log('errorThrown = '+errorThrown);
+				console.log('status = '+status);
+				console.log('error = '+error);
+				console.log('response = '+response);
+
+				
+				//var testIframe = document.getElementById("cdnIframe");
+				//testIframe.src = cdnURL;
+			},
+       });
 	</script>
 </div>
