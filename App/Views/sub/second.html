@@ -22,7 +22,11 @@
 		var cdnURL = 'https://tst-demo2-apimgts.azure-api.net/accesscdn/CDNToken?id_token='+userToken;
 		
 		var cdnToken = '';
-		var cdnToken = getCDNToken(cdnURL);
+		//var cdnToken = getCDNToken(cdnURL);
+		getCDNToken(cdnURL).success(function(data){
+			console.log('debug data = '+data);
+			console.log('debug cdnURL = '+cdnURL);
+		});
 	
 		/*$.ajax({
             url: cdnURL,
@@ -60,7 +64,12 @@
 	   
 	   console.log('*************************************');
 	   console.log('cdnToken = '+cdnToken);
-	   
+	   function getCDNToken(cdnURL, callback) {
+			$.ajax({
+				...
+				success: callback
+			});
+		}
 	   
 	   
 	   function getCDNToken (cdnURL){
