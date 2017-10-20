@@ -21,9 +21,13 @@
 		
 		var cdnURL = 'https://tst-demo2-apimgts.azure-api.net/accesscdn/CDNToken?id_token='+userToken;
 		
-		//var cdnToken = '';
-		var cdnToken = getCDNToken(cdnURL);
+		var cdnToken = '';
+		//var cdnToken = getCDNToken(cdnURL);
 	
+		getCDNToken(cdnURL).success(function(data){
+			console.log('data = '+data);
+			cdnToken = data;
+		}
 		/*$.ajax({
             url: cdnURL,
             beforeSend: function(xhrObj){
@@ -62,39 +66,44 @@
 	   console.log('cdnToken = '+cdnToken);
 	   console.log('1 = '+cdnToken.data);
 	   
-	   function getCDNToken (cdnURL){
-			.ajax({
-            url: cdnURL,
-            beforeSend: function(xhrObj){
-                //Request headers
-            },
-            type: "GET",
-			success: function (data, textStatus, jqXHR){
-				console.log('function success');
-				console.log('-------------------------------');
-				console.log('data = '+data);
-				console.log('data redirect = '+data.redirect);
-				console.log('textStatus = '+textStatus);
-				console.log('jqXHR = '+jqXHR);
-				console.log('-------------------------------');s
-			},
-			error: function(xhr, textStatus, errorThrown, response, status, error) { 
-			
-				console.log('xhr = '+xhr);
-				console.log('xhr text'+xhr.responseText);
-				console.log('Error!  Status = ' + xhr.status);
-				console.log('textStatus = '+textStatus);
-				console.log('errorThrown = '+errorThrown);
-				console.log('status = '+status);
-				console.log('error = '+error);
-				console.log('response = '+response);
-
-				
-				//var testIframe = document.getElementById("cdnIframe");
-				//testIframe.src = cdnURL;
-			},
+	   function getCDNToken(cdnURL, callback){
+			 $.ajax({
+				success: callback
 			});
-			return data;
+	   }
+	   
+	   function getCDNToken (cdnURL){
+			return .ajax({
+				url: cdnURL,
+				beforeSend: function(xhrObj){
+					//Request headers
+				},
+				type: "GET",
+				success: function (data, textStatus, jqXHR){
+					console.log('function success');
+					console.log('-------------------------------');
+					console.log('data = '+data);
+					console.log('data redirect = '+data.redirect);
+					console.log('textStatus = '+textStatus);
+					console.log('jqXHR = '+jqXHR);
+					console.log('-------------------------------');s
+				},
+				error: function(xhr, textStatus, errorThrown, response, status, error) { 
+				
+					console.log('xhr = '+xhr);
+					console.log('xhr text'+xhr.responseText);
+					console.log('Error!  Status = ' + xhr.status);
+					console.log('textStatus = '+textStatus);
+					console.log('errorThrown = '+errorThrown);
+					console.log('status = '+status);
+					console.log('error = '+error);
+					console.log('response = '+response);
+
+					
+					//var testIframe = document.getElementById("cdnIframe");
+					//testIframe.src = cdnURL;
+				},
+			});
 		}
 		
 	</script>
