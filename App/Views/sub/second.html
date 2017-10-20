@@ -26,6 +26,8 @@
 		getCDNToken(cdnURL).success(function(data){
 			console.log('debug data = '+data);
 			console.log('debug cdnURL = '+cdnURL);
+			
+			cdnToken = data;
 		});
 	
 		/*$.ajax({
