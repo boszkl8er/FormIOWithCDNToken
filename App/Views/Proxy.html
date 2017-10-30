@@ -1,3 +1,23 @@
 ﻿<div id="proxyID">
     Proxy
+	
+	<script type='text/javascript'>
+
+		var mainURL = 'https://projed-dev-fnc.azurewebsites.net/calc/subtract/200/20';
+		
+		
+		//Create iframe
+        //var ifrm = document.createElement("iframe");
+        //ifrm.setAttribute("src", mainURL);
+        //ifrm.style.width = "640px";
+        //ifrm.style.height = "480px";
+        //document.body.appendChild(ifrm);
+		
+		var proxyIframe = document.getElementById("proxyIframe");
+		proxyIframe.src = mainURL;
+	</script>
+	
+	<iframe  id="proxyIframe" width="1025" height="350" sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
+	
+	</iframe>
 </div>
