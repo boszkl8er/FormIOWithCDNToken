@@ -80,40 +80,6 @@
 	   console.log('*************************************');
 	   console.log('cdnToken = '+cdnToken);
 	   
-	   function getBear(bearURL, callback){
-			console.log('Call getBear1');
-			$.ajax({
-				success: callback
-			});
-	   }
-	   
-	    function getBear (bearURL){
-			console.log('Call getBear2');
-			//return $.ajax({
-			$.ajax({
-            url: bearURL,
-            beforeSend: function(xhrObj){
-                //Request headers
-            },
-            type: "GET",
-			success: function (data, textStatus, jqXHR){
-				console.log('function success');
-				console.log('-------------------------------');
-				console.log('data = '+data);
-				console.log('-------------------------------');
-			},
-			error: function(xhr, textStatus, errorThrown, response, status, error) { 
-				console.log('We have Error!!');
-			},
-			});
-		}
-	   
-	   function getCDNToken(cdnURL, callback) {
-			$.ajax({
-				success: callback
-			});
-		}
-	   
 	   
 	   function getCDNToken (cdnURL){
 			return $.ajax({
