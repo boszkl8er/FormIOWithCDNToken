@@ -43,6 +43,7 @@
 			var cdntokenDIV = document.getElementById('cdntoken');
 			var elem = document.createElement("iframe");
 			elem.setAttribute("src",cdnURL);
+			elem.frameBorder = 0;
 			cdntokenDIV.appendChild(elem);
 			
 			/*var ifrm = document.createElement("iframe");
