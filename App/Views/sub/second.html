@@ -6,8 +6,8 @@
 		var userToken = angular.element(document.getElementById('cdntoken')).scope().getTokenHome();
 		var cdnURL = 'https://tst-demo2-apimgts.azure-api.net/accesscdn/CDNToken?id_token='+userToken;
 		
-		getCDNToken(cdnURL).success(function(cdnToken){
-			var imgURL = 'https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg?cdn_token='+cdnToken;
+		getCDNToken(cdnURL).success(function(data){
+			var imgURL = 'https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg?cdn_token='+data;
 			
 			var cdntokenDIV = document.getElementById('cdntoken');
 			var elem = document.createElement("img");
