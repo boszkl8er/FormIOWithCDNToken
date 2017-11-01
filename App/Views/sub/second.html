@@ -3,83 +3,18 @@
 <!-- <img src="https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg"/> -->
 
 	<script type='text/javascript'>
-		console.log('Call second.html');
-		console.log('----------------------------------------------------');
-		//get user token
-		
-		//error code
-		//var userToken = angular.element(document.getElementById('cdntoken')).scope().getToken2();
-		//console.log('User token = '+userToken);
-		
-		//error code
-		//var userToken2 = angular.element(document.getElementById('AppID')).scope().getToken2();
-		//console.log('User token2 = '+userToken2);
-	
-		
 		var userToken = angular.element(document.getElementById('cdntoken')).scope().getTokenHome();
-		console.log('User token = '+userToken);
-		
 		var cdnURL = 'https://tst-demo2-apimgts.azure-api.net/accesscdn/CDNToken?id_token='+userToken;
 		
-		var cdnToken = '';
-		//var cdnToken = getCDNToken(cdnURL);
-		getCDNToken(cdnURL).success(function(data){
-			console.log('debug data = '+data);
-			console.log('debug cdnURL = '+cdnURL);
-			
-			cdnToken = data;
-			
-			var bearURL = 'https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg?cdn_token='+data;
-			
-			//Ajax call
-			//getBear(bearURL);
+		getCDNToken(cdnURL).success(function(cdnToken){
+			var imgURL = 'https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg?cdn_token='+cdnToken;
 			
 			var cdntokenDIV = document.getElementById('cdntoken');
-			console.log('cdntokenDIV = '+cdntokenDIV);
-			
 			var elem = document.createElement("img");
-			elem.setAttribute("src",bearURL);
+			elem.setAttribute("src",imgURL);
 			cdntokenDIV.appendChild(elem);
 			
 		});
-	
-		/*$.ajax({
-            url: cdnURL,
-            beforeSend: function(xhrObj){
-                //Request headers
-            },
-            type: "GET",
-			success: function (data, textStatus, jqXHR){
-				console.log('function success');
-				console.log('-------------------------------');
-				console.log('data = '+data);
-				console.log('data redirect = '+data.redirect);
-				console.log('textStatus = '+textStatus);
-				console.log('jqXHR = '+jqXHR);
-				console.log('-------------------------------');
-			
-				callback(data);
-			},
-			error: function(xhr, textStatus, errorThrown, response, status, error) { 
-			
-				console.log('xhr = '+xhr);
-				console.log('xhr text'+xhr.responseText);
-				console.log('Error!  Status = ' + xhr.status);
-				console.log('textStatus = '+textStatus);
-				console.log('errorThrown = '+errorThrown);
-				console.log('status = '+status);
-				console.log('error = '+error);
-				console.log('response = '+response);
-
-				
-				//var testIframe = document.getElementById("cdnIframe");
-				//testIframe.src = cdnURL;
-			},
-       });*/
-	   
-	   console.log('*************************************');
-	   console.log('cdnToken = '+cdnToken);
-	   
 	   
 	   function getCDNToken (cdnURL){
 			return $.ajax({
@@ -89,31 +24,12 @@
             },
             type: "GET",
 			success: function (data, textStatus, jqXHR){
-				console.log('function success');
-				console.log('-------------------------------');
-				console.log('data = '+data);
-				console.log('data redirect = '+data.redirect);
-				console.log('textStatus = '+textStatus);
-				console.log('jqXHR = '+jqXHR);
-				console.log('-------------------------------');
+				console.log('CDNToken = '+data);
 			},
 			error: function(xhr, textStatus, errorThrown, response, status, error) { 
-			
-				console.log('xhr = '+xhr);
-				console.log('xhr text'+xhr.responseText);
-				console.log('Error!  Status = ' + xhr.status);
-				console.log('textStatus = '+textStatus);
-				console.log('errorThrown = '+errorThrown);
-				console.log('status = '+status);
-				console.log('error = '+error);
-				console.log('response = '+response);
-
-				
-				//var testIframe = document.getElementById("cdnIframe");
-				//testIframe.src = cdnURL;
+				console.log('Error getCDNToken !!');
 			},
 			});
 		}
-		
 	</script>
 </div>
