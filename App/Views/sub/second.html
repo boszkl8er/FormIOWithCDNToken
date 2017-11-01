@@ -41,9 +41,15 @@
 			
 			var cdnURL = 'https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg';
 			var cdntokenDIV = document.getElementById('cdntoken');
-			var elem = document.createElement("img");
+			var elem = document.createElement("iframe");
 			elem.setAttribute("src",cdnURL);
 			cdntokenDIV.appendChild(elem);
+			
+			/*var ifrm = document.createElement("iframe");
+			ifrm.setAttribute("src", "http://google.com/");
+			ifrm.style.width = "640px";
+			ifrm.style.height = "480px";
+			document.body.appendChild(ifrm);*/
 		}
 		
 	</script>
