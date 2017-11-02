@@ -1,5 +1,5 @@
 ﻿'use strict';
-angular.module('catApp')
+angular.module('LfApp')
 .controller('indexCtrl', ['$scope', 'adalAuthenticationService', function ($scope, adalService) {
 
 }]);

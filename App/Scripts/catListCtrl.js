@@ -1,5 +1,5 @@
 ﻿'use strict';
-angular.module('catApp')
+angular.module('LfApp')
 .controller('catListCtrl', ['$scope', '$location', 'catListSvc', 'adalAuthenticationService', function ($scope, $location, catListSvc, adalService) {
     $scope.error = "";
     $scope.loadingMessage = "Loading...";
