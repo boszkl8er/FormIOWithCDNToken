@@ -1,7 +1,6 @@
 <div id="cdntoken">
 
 	<!-- <img src="https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg"/> -->
-
 	<script type='text/javascript'>
 	
 		var userToken = angular.element(document.getElementById('cdntoken')).scope().getTokenHome();
@@ -11,14 +10,12 @@
 			var cdnURL = 'https://tst-demo2-apimgts.azure-api.net/accesscdn/CDNToken?id_token='+userToken;
 			
 			getCDNToken(cdnURL).success(function(data){
-				
 				var cdnURL = 'https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg?cdn_token='+data;
 				
 				var cdntokenDIV = document.getElementById('cdntoken');
 				var elem = document.createElement("img");
 				elem.setAttribute("src",cdnURL);
 				cdntokenDIV.appendChild(elem);
-				
 			});
 		   
 		   function getCDNToken (cdnURL){
@@ -45,12 +42,6 @@
 			elem.setAttribute("src",cdnURL);
 			elem.frameBorder = 0;
 			cdntokenDIV.appendChild(elem);
-			
-			/*var ifrm = document.createElement("iframe");
-			ifrm.setAttribute("src", "http://google.com/");
-			ifrm.style.width = "640px";
-			ifrm.style.height = "480px";
-			document.body.appendChild(ifrm);*/
 		}
 		
 	</script>
