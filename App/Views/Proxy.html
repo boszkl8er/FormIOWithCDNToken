@@ -6,14 +6,15 @@
 		//var mainURL = 'https://projed-dev-fnc.azurewebsites.net/calc/subtract/200/20';
 		var mainURL = 'https://sukanya-tst-functionapp-demoproxy.azurewebsites.net/calc/100/50';
 		
-		var proxyIframe = document.getElementById("proxyIframe");
-		proxyIframe.src = mainURL;
+		//----------- 1
+		/*var proxyIframe = document.getElementById("proxyIframe");
+		proxyIframe.src = mainURL;*/
 		
 		//user token
 		var userToken = angular.element(document.getElementById('proxyID')).scope().getTokenHome();
 		console.log('User token = '+userToken);
 		
-		/*testAjaxFunction(mainURL,userToken).success(function(data){
+		testAjaxFunction(mainURL,userToken).success(function(data){
 				//var mainURL = 'https://sukanya-tst-functionapp-demoproxy.azurewebsites.net/calc/100/20';
 				
 				console.log('data = '+data);
@@ -35,7 +36,7 @@
 					console.log('getCDNToken Error!!');
 				},
 				});
-			}*/
+			}
 	</script>
 	
 	<iframe  id="proxyIframe" width="1025" height="350" sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
