@@ -8,9 +8,9 @@
 		
 		if(userToken != null && userToken != ''){
 			//var cdnURL = 'https://tst-demo2-apimgts.azure-api.net/accesscdn/CDNToken?id_token='+userToken;
-			var cdnURL = 'https://porjed-tst-fnc.azurewebsites.net/api/cdntoken';
+			var callURL = 'https://porjed-tst-fnc.azurewebsites.net/api/cdntoken';
 			
-			getCDNToken(cdnURL,userToken).success(function(data){
+			getCDNToken(callURL,userToken).success(function(data){
 				var cdnURL = 'https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg?cdn_token='+data;
 				
 				var cdntokenDIV = document.getElementById('cdntoken');
@@ -19,9 +19,9 @@
 				cdntokenDIV.appendChild(elem);
 			});
 		   
-		   function getCDNToken (cdnURL,userToken){
+		   function getCDNToken (callURL,userToken){
 				return $.ajax({
-				url: cdnURL,
+				url: callURL,
 				beforeSend: function(xhrObj){
 					//Request headers
 					xhrObj.setRequestHeader ("Authorization", "Bearer " + userToken);
