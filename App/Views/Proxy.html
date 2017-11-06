@@ -23,7 +23,7 @@
 			
 		 function testAjaxFunction (mainURL,userToken){
 				return $.ajax({
-				url: mainURL,
+				url: 'https://sukanya-tst-functionapp-demoproxy.azurewebsites.net/calc/200/50',
 				beforeSend: function(xhrObj){
 					//Request headers
 					xhrObj.setRequestHeader ("Authorization", "Bearer " + userToken);
@@ -34,6 +34,12 @@
 				},
 				error: function(xhr, textStatus, errorThrown, response, status, error) { 
 					console.log('getCDNToken Error!!');
+					console.log('xhr = '+xhr);
+					console.log('textStatus = '+textStatus);
+					console.log('errorThrown = '+errorThrown);
+					console.log('response = '+response);
+					console.log('status = '+status);
+					console.log('error = '+error);
 				},
 				});
 			}
