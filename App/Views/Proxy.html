@@ -13,17 +13,18 @@
 		var userToken = angular.element(document.getElementById('proxyID')).scope().getTokenHome();
 		console.log('User token = '+userToken);
 		
-		testAjaxFunction(mainURL).success(function(data){
+		testAjaxFunction(mainURL,userToken).success(function(data){
 				var mainURL = 'https://sukanya-tst-functionapp-demoproxy.azurewebsites.net/calc/100/20';
 				
-				var cdntokenDIV = document.getElementById('proxyID');
-				var elem = document.createElement("img");
-				elem.setAttribute("src",mainURL);
-				cdntokenDIV.appendChild(elem);
+				console.log('data = '+data);
+				//var cdntokenDIV = document.getElementById('proxyID');
+				//var elem = document.createElement("img");
+				//elem.setAttribute("src",mainURL);
+				//cdntokenDIV.appendChild(elem);
 			});
 			
 			
-		 function testAjaxFunction (mainURL){
+		 function testAjaxFunction (mainURL,userToken){
 				return $.ajax({
 				url: mainURL,
 				beforeSend: function(xhrObj){
