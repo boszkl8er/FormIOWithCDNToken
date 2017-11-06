@@ -14,7 +14,7 @@
 		console.log('User token = '+userToken);
 		
 		testAjaxFunction(mainURL,userToken).success(function(data){
-				var mainURL = 'https://sukanya-tst-functionapp-demoproxy.azurewebsites.net/calc/100/20';
+				//var mainURL = 'https://sukanya-tst-functionapp-demoproxy.azurewebsites.net/calc/100/20';
 				
 				console.log('data = '+data);
 				//var cdntokenDIV = document.getElementById('proxyID');
@@ -29,7 +29,7 @@
 				url: mainURL,
 				beforeSend: function(xhrObj){
 					//Request headers
-					xhrObj.setRequestHeader ("Authorization", "Bearer " + userToken);
+					//xhrObj.setRequestHeader ("Authorization", "Bearer " + userToken);
 				},
 				type: "GET",
 				success: function (data, textStatus, jqXHR){
