@@ -13,14 +13,10 @@
 		var userToken = angular.element(document.getElementById('proxyID')).scope().getTokenHome();
 		console.log('User token = '+userToken);
 		
-		testAjaxFunction(mainURL,userToken).success(function(data){
+		/*testAjaxFunction(mainURL,userToken).success(function(data){
 				//var mainURL = 'https://sukanya-tst-functionapp-demoproxy.azurewebsites.net/calc/100/20';
 				
 				console.log('data = '+data);
-				//var cdntokenDIV = document.getElementById('proxyID');
-				//var elem = document.createElement("img");
-				//elem.setAttribute("src",mainURL);
-				//cdntokenDIV.appendChild(elem);
 			});
 			
 			
@@ -39,7 +35,7 @@
 					console.log('getCDNToken Error!!');
 				},
 				});
-			}
+			}*/
 	</script>
 	
 	<iframe  id="proxyIframe" width="1025" height="350" sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
