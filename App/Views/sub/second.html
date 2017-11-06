@@ -7,9 +7,10 @@
 		console.log('User token = '+userToken);
 		
 		if(userToken != null && userToken != ''){
-			var cdnURL = 'https://tst-demo2-apimgts.azure-api.net/accesscdn/CDNToken?id_token='+userToken;
+			//var cdnURL = 'https://tst-demo2-apimgts.azure-api.net/accesscdn/CDNToken?id_token='+userToken;
+			var cdnURL = 'https://porjed-tst-fnc.azurewebsites.net/api/cdntoken';
 			
-			getCDNToken(cdnURL).success(function(data){
+			getCDNToken(cdnURL,userToken).success(function(data){
 				var cdnURL = 'https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg?cdn_token='+data;
 				
 				var cdntokenDIV = document.getElementById('cdntoken');
@@ -18,11 +19,12 @@
 				cdntokenDIV.appendChild(elem);
 			});
 		   
-		   function getCDNToken (cdnURL){
+		   function getCDNToken (cdnURL,userToken){
 				return $.ajax({
 				url: cdnURL,
 				beforeSend: function(xhrObj){
 					//Request headers
+					xhrObj.setRequestHeader ("Authorization", "Bearer " + userToken);
 				},
 				type: "GET",
 				success: function (data, textStatus, jqXHR){
