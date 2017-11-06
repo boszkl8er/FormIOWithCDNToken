@@ -11,12 +11,13 @@
 			var callURL = 'https://porjed-tst-fnc.azurewebsites.net/api/cdntoken';
 			
 			getCDNToken(callURL,userToken).success(function(data){
-				var cdnURL = 'https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg?cdn_token='+data;
+				console.log('Function .success');
+				/*var cdnURL = 'https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg?cdn_token='+data;
 				
 				var cdntokenDIV = document.getElementById('cdntoken');
 				var elem = document.createElement("img");
 				elem.setAttribute("src",cdnURL);
-				cdntokenDIV.appendChild(elem);
+				cdntokenDIV.appendChild(elem);*/
 			});
 		   
 		   function getCDNToken (callURL,userToken){
