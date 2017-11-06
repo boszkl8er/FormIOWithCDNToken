@@ -10,7 +10,7 @@
 		proxyIframe.src = mainURL;
 		
 		//user token
-		var userToken = angular.element(document.getElementById('cdntoken')).scope().getTokenHome();
+		var userToken = angular.element(document.getElementById('proxyID')).scope().getTokenHome();
 		console.log('User token = '+userToken);
 		
 		testAjaxFunction(mainURL).success(function(data){
