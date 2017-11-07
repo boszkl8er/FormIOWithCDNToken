@@ -15,7 +15,7 @@
 		console.log('User token = '+userToken);
 		
 		//------------------ debug1 -----------------
-		$.ajax({
+		/*$.ajax({
 			url: 'https://sukanya-tst-functionapp-demoproxy.azurewebsites.net/calc/100/50',
 			dataType: 'GET',
 			beforeSend: function(xhrObj){
@@ -43,8 +43,8 @@
 					console.log('status = '+status);
 					console.log('error = '+error);
 			},
-		});
-		/*testAjaxFunction(mainURL,userToken).success(function(data){
+		});*/
+		testAjaxFunction(mainURL,userToken).success(function(data){
 				//var mainURL = 'https://sukanya-tst-functionapp-demoproxy.azurewebsites.net/calc/100/20';
 				
 				console.log('data = '+data);
@@ -63,7 +63,11 @@
 				},
 				type: "GET",
 				success: function (data, textStatus, jqXHR){
-					console.log('CDNToken = '+data);
+					console.log('Success Working !!');
+					console.log('-----------------------------------------');
+					console.log('data = '+data);
+					console.log('textStatus = '+textStatus);
+					console.log('jqXHR = '+jqXHR);
 				},
 				error: function(xhr, textStatus, errorThrown, response, status, error) { 
 					console.log('getCDNToken Error!!');
@@ -75,7 +79,7 @@
 					console.log('error = '+error);
 				},
 				});
-			}*/
+			}
 	</script>
 	
 	<iframe  id="proxyIframe" width="1025" height="350" sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
