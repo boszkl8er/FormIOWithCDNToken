@@ -59,8 +59,8 @@
 				url: 'https://sukanya-tst-functionapp-demoproxy.azurewebsites.net/calc/200/50',
 				beforeSend: function(xhrObj){
 					//Request headers
-					//xhrObj.setRequestHeader ("Authorization", "Bearer " + userToken);
-					xhrObj.setRequestHeader ("Authorization", "");
+					xhrObj.setRequestHeader ("Authorization", "Bearer " + userToken);
+					//xhrObj.setRequestHeader ("Authorization", "");
 				},
 				type: "GET",
 				success: function (data, textStatus, jqXHR){
