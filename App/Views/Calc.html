@@ -77,7 +77,7 @@
               //"<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" +
               "</p>";*/
             //$("#result").prepend(res_html);
-			$("#result").value(response);
+			$("#result").value = response;
           }).fail(function (error) {
             console.log(JSON.stringify(error.statusText));
             instance.setAlert('danger', error.statusText);
