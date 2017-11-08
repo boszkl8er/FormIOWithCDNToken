@@ -7,7 +7,7 @@
 	
 	<script type=''>
 	window.onload = function () {
-		Formio.createForm(document.getElementById('formio1'), 'https://gtdcbfvemyajgpb.form.io/lfdemocalc').then(function (instance) {
+		Formio.createForm(document.getElementById('calcFormIO'), 'https://gtdcbfvemyajgpb.form.io/lfdemocalc').then(function (instance) {
 			instance.on('submit', (submission) => {
 			
 				var url = 'https://together.azure-api.net/democalc/subtract?a=';
