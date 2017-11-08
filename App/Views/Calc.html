@@ -38,7 +38,7 @@
 			});//instance
 		});//Create form*/
 	//};//Window onload
-	
+	window.onload = function () {
 	Formio.createForm(document.getElementById('formio1'), calcForm).then(function (instance) {
         // -----------------------------------------------
         // Trigger on submit event.
@@ -81,5 +81,6 @@
           });
         });
       });
+	 };
 	</script>
 </div>
