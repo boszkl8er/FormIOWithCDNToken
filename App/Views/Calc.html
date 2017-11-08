@@ -6,6 +6,7 @@
 	</script>
 	
 	<script type=''>
+	window.onload = function () {
 		Formio.createForm(document.getElementById('formio1'), 'https://gtdcbfvemyajgpb.form.io/lfdemocalc').then(function (instance) {
 			instance.on('submit', (submission) => {
 			
@@ -37,6 +38,6 @@
 				});
 			});//instance
 		});//Create form
-			
+	};//Window onload
 	</script>
 </div>
